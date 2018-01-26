@@ -1,0 +1,194 @@
+@import "config.scss";
+
+
+header{
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  color: $white;
+  font-style: normal;
+  padding: 15px 30px 15px 30px;
+  display: block;
+  font-size: 18px;
+  width: 100%;
+  height: 70px;
+  z-index: 3;
+
+  .logo{
+    position: absolute;
+    top: 50%; left: 30px;
+    @include translateY(-50%);
+    line-height: 70px;
+    cursor:help;
+  }
+
+    nav,
+    nav ul,
+    nav ul li{
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      position: absolute;
+      top: 50%; right:30px;
+      @include translateY(-50%);
+      line-height: 70px;
+
+        ul li {
+          list-style: none;
+          display: inline-block;
+          margin-right: 10px;
+          cursor: not-allowed;
+        }
+    }
+
+
+    h1 {
+      font-weight: 400;
+      font-size: 18px;
+      color: $white;
+    }
+
+
+    .ring-container {
+        position: absolute;
+        top: 28px; right:100px;
+    }
+
+    .circle {
+        width: 13px;
+        height: 13px;
+        background-color: $white;
+        border-radius: 50%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    .ringring {
+        border: 3px solid $white;
+        -webkit-border-radius: 30px;
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        left: -6px;
+        top: -6px;
+        -webkit-animation: pulsate 1s ease-out;
+        -webkit-animation-iteration-count: infinite;
+        opacity: 0.0
+    }
+    @-webkit-keyframes pulsate {
+        0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+        50% {opacity: 1.0;}
+        100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+    }
+
+
+    /* Buzz */
+    @-webkit-keyframes hvr-buzz {
+      50% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+      }
+      100% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+      }
+    }
+    @keyframes hvr-buzz {
+      50% {
+        -webkit-transform: translateX(3px) rotate(2deg);
+        transform: translateX(3px) rotate(2deg);
+      }
+      100% {
+        -webkit-transform: translateX(-3px) rotate(-2deg);
+        transform: translateX(-3px) rotate(-2deg);
+      }
+    }
+    .hvr-buzz {
+
+    }
+    .hvr-buzz:hover, .hvr-buzz:focus, .hvr-buzz:active {
+      -webkit-animation-name: hvr-buzz;
+      animation-name: hvr-buzz;
+      -webkit-animation-duration: 0.15s;
+      animation-duration: 0.15s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+    }
+
+
+}
+
+.vHeader{
+  min-height: 100vh;
+  position: absolute;
+  color: $black;
+
+
+    .videoWrap{
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+
+
+    }
+
+    .fullVid {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+
+    .headerOverlay{
+
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #6401ec;
+      background-image: url(./img/bk-static.gif);
+       background-repeat: repeat;
+      z-index: 1;
+      opacity: 0.75;
+
+
+    }
+
+
+
+}
+
+
+.homeContainer{
+  position:absolute;
+  z-index: 2;
+
+    .homeContent {
+      margin-top: 150px;
+      padding: 0px 60px 60px 60px;
+      width: 70%;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 36px; /* Some tweener fallback that doesn't look awful */
+      font-size: 5vw;
+      line-height: 118%;
+      color: $white;
+    }
+
+}
